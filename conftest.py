@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 def driver():
     """Повертає екземпляр драйвера Chrome для тестування."""
     chrome_options = Options()
-    # chrome_options.add_argument("--windows-size=1920,1080")
+    chrome_options.add_argument("--incognito")
 
     # Налаштування драйвера через Service
     service = Service(ChromeDriverManager().install())
@@ -17,6 +17,8 @@ def driver():
 
     driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.maximize_window()
+
+
     yield driver
     driver.quit()  # Закриває браузер після тесту
 
