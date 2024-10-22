@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 def driver():
     """Повертає екземпляр драйвера Chrome для тестування."""
     chrome_options = Options()
-    chrome_options.add_argument("--incognito")
+    # chrome_options.add_argument("--incognito")
 
     # Налаштування драйвера через Service
     service = Service(ChromeDriverManager().install())
